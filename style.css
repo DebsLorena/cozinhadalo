@@ -1,0 +1,313 @@
+@import url(./variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/amsterdam-2');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 14px;
+    background: var(--color-background1)
+}
+
+body {
+    background-color: var(--color-white);
+    user-select: none;
+    /* controla se o usuário pode selecionar texto*/
+    overflow-wrap: break-word;
+    /*especifica oportunidades de quebra suave entre letras*/
+    word-wrap: break-word;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--color-dark);
+}
+
+main {
+    display: block;
+}
+
+/*parallax*/
+section.module.parallax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh !important;
+    /*para pegar 100% da altura da tela inicial*/
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*efeito parallax*/
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    /*mozila*/
+    -o-background-size: cover;
+    /*opera*/
+}
+
+section.module.parallax-1 {
+    background-image: url(./Imagens/1.png);
+}
+
+section.module.parallax-2 {
+    background-image: url(./Imagens/2.png);
+}
+
+section.module.parallax-3 {
+    background-image: url(./Imagens/3.png);
+}
+
+section.module.parallax::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 50%, #453646 100%);
+}
+
+section.module.parallax h1 {
+    font-family: 'Amsterdam', sans-serif;
+    color: var(--color-white);
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+}
+
+/*segunda secção - module*/
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section.module p {
+    margin-bottom: 20px;
+}
+
+section.module:last-child {
+    margin-bottom: 0;
+}
+
+section.module h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+section.module.content {
+    padding: 40px 0;
+    background: var(--color-primary);
+}
+
+/*cards*/
+
+.sub-title {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 20px;
+    font-family: 'Amsterdam', sans-serif;
+    color: var(--color-dark);
+}
+
+.section-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+}
+
+.slide-container {
+    max-width: 1120px;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.slide-content {
+    margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.card {
+    border-radius: 25px;
+    background-color: var(--color-shadow);
+    width: 320px;
+    margin-left: 20px;
+}
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-dark);
+    border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--color-dark);
+}
+
+.overlay::after {
+    border-radius: 0 25px 0 0;
+    background-color: var(--color-shadow);
+}
+
+.card-image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: var(--color-primary);
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--color-primary);
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+.description {
+    font-size: 14px;
+    color: var(--color-dark);
+    text-align: center;
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    color: aliceblue;
+    padding: 8px 16px;
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--color-dark);
+}
+
+
+.swiper-navBtn {
+    color:  var(--color-shadow);
+    transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover {
+    color: #4070F4;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 35px;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-shadow);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color:  var(--color-shadow);
+}
+
+
+/*footer*/
+
+footer {
+    background: var(--color-primary);
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-brand ion-icon {
+    padding: 30px;
+    color: var(--color-dark);
+    font-size: 25px;
+    padding: 15px;
+}
+
+.footer-brand ion-icon:hover {
+    color: var(--color-white);
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right .copyright {
+    font-size: 20px;
+}
+
+.footer-right a {
+text-decoration: none;
+}
